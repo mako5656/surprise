@@ -1,1 +1,1 @@
-web: gunicorn .wsgi --log-file -instantsurprise
+web: gunicorn instantsurprise.wsgi --log-file -
