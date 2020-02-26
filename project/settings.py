@@ -26,7 +26,17 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 SECRET_KEY = '4q8nhf65e@0u3meznwy6-ctgy8p+_9)3!1*j49smp5y+m5fx2m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
 
 ALLOWED_HOSTS = ['*']
 
