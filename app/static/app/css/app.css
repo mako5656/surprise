@@ -1,0 +1,38 @@
+.row{
+    margin-top:3px;
+    margin-bottom:3px;
+}
+
+/*-- PC版表示CSS  --*/
+.pc_area{
+  display:block;
+}
+.phone_area{
+  display:none;
+}
+.horizontal_scroll{
+    overflow-y: scroll;
+    overflow-y: hidden;
+}
+
+/*-- スマホ版表示CSS  --*/
+@media screen and (max-width: 480px){
+  .pc_area{
+    display:none;
+  }
+  .phone_area{
+    display:block;
+  }
+  .horizontal_scroll {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 0 12px 8px;
+  display: -ms-flexbox;
+  display: flex;
+  }
+}
+
+
+/*.container {*/
+/*    max-width: 20%;*/
+/*}*/
