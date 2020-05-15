@@ -82,9 +82,9 @@ class Item(models.Model):
     )
 
     # 管理サイト上の表示設定
-    def __str__(self):
-        return self.shop_name
-        
-    class Meta:
-        verbose_name = 'アイテム'
-        verbose_name_plural = 'アイテム'
+    # def __str__(self):
+    #     return self.shop_name
+    #
+    # class Meta:
+    #     verbose_name = 'アイテム'
+    #     verbose_name_plural = 'アイテム'

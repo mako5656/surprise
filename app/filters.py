@@ -13,13 +13,11 @@ class ItemFilter(FilterSet):
     shop_name = filters.CharFilter(label='店名', lookup_expr='contains')
     
     fields=(
-        
         ('shop_name','shop_name'),
         ('budget','budget'),
         ('area','area'),
-
-
     ),
+
     field_labels={
         'shop_name':'店名',
         'budget':'予算',

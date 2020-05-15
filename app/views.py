@@ -8,19 +8,17 @@ from .filters import ItemFilter
 from .forms import ItemForm
 from .models import Item
 
-# Create your views here.
-# 検索一覧画面
 class ItemFilterView(FilterView):
     model = Item
 
-    # デフォルトの並び順をいいね順とする
+    # デフォルトの並び順をいいね順
     queryset = Item.objects.all().order_by('-good')
 
     # django-filter用設定
     filterset_class = ItemFilter
     strict = False
 
-    # 1ページあたりの表示件数
+    # 1ページ表示件数
     paginate_by = 10
 
     # 検索条件をセッションに保存する
@@ -32,14 +30,11 @@ class ItemFilterView(FilterView):
             if 'query' in request.session.keys():
                 for key in request.session['query'].keys():
                     request.GET[key] = request.session['query'][key]
-
         return super().get(request, **kwargs)
-
 
 # 詳細画面
 class ItemDetailView(LoginRequiredMixin, DetailView):
     model = Item
-
 
 # 登録画面
 class ItemCreateView(LoginRequiredMixin, CreateView):
@@ -47,13 +42,11 @@ class ItemCreateView(LoginRequiredMixin, CreateView):
     form_class = ItemForm
     success_url = reverse_lazy('index')
 
-
 # 更新画面
 class ItemUpdateView(LoginRequiredMixin, UpdateView):
     model = Item
     form_class = ItemForm
     success_url = reverse_lazy('index')
-
 
 # 削除画面
 class ItemDeleteView(LoginRequiredMixin, DeleteView):

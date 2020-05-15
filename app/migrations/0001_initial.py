@@ -23,7 +23,9 @@ class Migration(migrations.Migration):
                 ('catch', models.TextField(max_length=300, verbose_name='店のジャンルやキャッチコピー3')),
                 ('image_url', models.TextField(max_length=300, verbose_name='画像のURL')),
                 ('insta_tag_name', models.TextField(max_length=300, verbose_name='インスタのタグ名')),
-                ('budget', models.IntegerField(choices=[(0, '1001~2000'), (1, '2001~3000'), (2, '3001~4000'), (3, '4001~5000'), (4, '5001~6000')], default=1, verbose_name='予算')),
+                ('budget', models.IntegerField(
+                    choices=[(0, '1001~2000'), (1, '2001~3000'), (2, '3001~4000'), (3, '4001~5000'), (4, '5001~6000')],
+                    default=1, verbose_name='予算')),
                 ('budget_str', models.TextField(max_length=300, verbose_name='予算str')),
                 ('area', models.IntegerField(choices=[(0, '名古屋駅'), (1, '栄駅')], default=1, verbose_name='エリア')),
                 ('area_str', models.TextField(max_length=300, verbose_name='エリアstr')),
